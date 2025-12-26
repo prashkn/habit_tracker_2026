@@ -1,0 +1,91 @@
+:root {
+  color-scheme: light dark;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 48px 20px;
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  background: radial-gradient(1200px 800px at 20% 0%, #5b83ff2a, transparent),
+    radial-gradient(900px 700px at 80% 30%, #ff5bca2a, transparent),
+    linear-gradient(180deg, #0b1020, #060914);
+  color: #eef2ff;
+}
+
+.content {
+  width: min(880px, 100%);
+  display: grid;
+  gap: 24px;
+  align-self: start;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.titleId {
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 14px;
+  border: 1px solid #ffffff1a;
+  background: #0f1730cc;
+  box-shadow: 0 20px 80px #00000066;
+  padding: 14px;
+}
+
+.checklistRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.checklistLabel {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.saveButton {
+  margin-top: 8px;
+  align-self: start;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #ffffff26;
+  background: #ffffff12;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saveButton:hover {
+  background: #ffffff1a;
+}
+
+.saveButton:active {
+  transform: translateY(1px);
+}
+
+

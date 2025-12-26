@@ -1,0 +1,1 @@
+export { getID } from "./getID";

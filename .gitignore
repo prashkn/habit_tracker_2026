@@ -1,0 +1,9 @@
+node_modules
+dist
+.DS_Store
+
+# Supabase credentials (kept under .env/ via vite.config.ts envDir)
+.env/.env.local
+.env/.env.*.local
+
+
