@@ -30,10 +30,14 @@ export async function fetchHabitDay(
  */
 export async function upsertHabitDay(
   dayId: number,
-  items: ChecklistItem[]
+  items: ChecklistItem[],
+  note: string
 ): Promise<HabitDayUpsertResult> {
-  const payload: Record<string, boolean | number> = { id: dayId };
+  const payload: Record<string, boolean | number | string> = {
+    id: dayId,
+  };
   for (const item of items) payload[item.id] = item.checked;
+  payload.note = note;
 
   const { data, error } = await supabase
     .from("habits")

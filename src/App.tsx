@@ -26,6 +26,7 @@ export function App() {
     { id: "cry", label: "Cried", checked: false },
     { id: "party", label: "Party/Planned Event", checked: false },
   ]);
+  const [initNote, setInitNote] = useState<string>("");
 
   useEffect(() => {
     let cancelled = false;
@@ -37,11 +38,14 @@ export function App() {
         if (cancelled) return;
 
         setItems((prev) => hydrateChecksFromRow(prev, row));
+        setInitNote(noteFromRow(row));
       } catch (e) {
         console.error("Failed to load habits row for today", e);
         // Default to false if we can't load.
-        if (!cancelled)
+        if (!cancelled) {
           setItems((prev) => prev.map((it) => ({ ...it, checked: false })));
+          setInitNote("");
+        }
       }
     }
 
@@ -61,7 +65,7 @@ export function App() {
     <div className="page">
       <div className="content">
         <h1 className="title">{formatLocalDateTime(now)}</h1>
-        <Checklist items={items} onToggle={onToggle} />
+        <Checklist initNote={initNote} items={items} onToggle={onToggle} />
       </div>
     </div>
   );
@@ -77,4 +81,10 @@ function hydrateChecksFromRow(
     const v = row[it.id];
     return { ...it, checked: typeof v === "boolean" ? v : false };
   });
+}
+
+function noteFromRow(row: HabitDayRow | null): string {
+  if (!row) return "";
+  const v = row.note;
+  return typeof v === "string" ? v : "";
 }
