@@ -20,11 +20,13 @@ export function App() {
     { id: "cardio", label: "Cardio", checked: false },
     { id: "boxing", label: "Boxing", checked: false },
     { id: "table_tennis", label: "Table Tennis", checked: false },
-    { id: "vacation", label: "Vacation", checked: false },
     { id: "read", label: "Read", checked: false },
+    { id: "wrote", label: "Wrote", checked: false },
+    { id: "code", label: "Coded outside of work", checked: false },
+    { id: "vacation", label: "Vacation", checked: false },
     { id: "alcohol", label: "Drank", checked: false },
-    { id: "cry", label: "Cried", checked: false },
     { id: "party", label: "Party/Planned Event", checked: false },
+    { id: "cry", label: "Cried", checked: false },
   ]);
   const [initNote, setInitNote] = useState<string>("");
 
